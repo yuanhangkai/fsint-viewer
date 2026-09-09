@@ -1,0 +1,15 @@
+{
+  "id": "E2E_TEST_001",
+  "customer": "端到端测试客户",
+  "position": "模拟点位 1号楼",
+  "dateTime": "2026-09-09 14:00",
+  "photoCount": 2,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/E2E_TEST_001/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/E2E_TEST_001/photo_002.jpg"
+  ],
+  "video": null,
+  "remark": "模拟推送点开看到的内容",
+  "updatedAt": 1694246400000
+}
