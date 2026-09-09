@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+<title>出货记录</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; min-height: 100%; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft YaHei", sans-serif;
+  background: #f5f7fa;
+  color: #1f2937;
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+header {
+  background: linear-gradient(135deg, #1677ff 0%, #0b5ed7 100%);
+  color: #fff;
+  padding: 24px 20px 30px;
+  padding-top: max(24px, env(safe-area-inset-top, 0px));
+  box-shadow: 0 4px 12px rgba(11, 94, 215, 0.15);
+}
+header h1 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+header .meta {
+  font-size: 14px;
+  opacity: 0.92;
+  line-height: 1.6;
+  margin-top: 8px;
+}
+header .meta b {
+  opacity: 0.7;
+  font-weight: 500;
+  margin-right: 4px;
+}
+.info {
+  background: #fff;
+  margin: -16px 14px 14px;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 14px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.info-row:last-child { border-bottom: none; }
+.info-row .k { color: #6b7280; }
+.info-row .v { color: #1f2937; font-weight: 500; text-align: right; max-width: 60%; word-break: break-word; }
+.section-title {
+  padding: 14px 18px 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #6b7280;
+}
+.gallery {
+  padding: 4px 14px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+.gallery img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #e5e7eb;
+  display: block;
+}
+.remark {
+  margin: 12px 14px 18px;
+  padding: 12px 14px;
+  background: #fef3c7;
+  border-left: 3px solid #f59e0b;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #78350f;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+.loading {
+  text-align: center;
+  padding: 80px 20px;
+  color: #9ca3af;
+  font-size: 14px;
+}
+.notfound {
+  text-align: center;
+  padding: 80px 20px;
+}
+.notfound h2 { color: #6b7280; font-size: 18px; margin-bottom: 12px; font-weight: 500; }
+.notfound p { color: #9ca3af; font-size: 14px; }
+.footer {
+  text-align: center;
+  padding: 30px 20px 20px;
+  font-size: 12px;
+  color: #9ca3af;
+}
+.video-block {
+  margin: 12px 14px;
+  background: #000;
+  border-radius: 10px;
+  overflow: hidden;
+}
+video { width: 100%; display: block; }
+</style>
+</head>
+<body>
+<div id="app">
+  <div class="loading">加载出货记录中...</div>
+</div>
+
+<script>
+const params = new URLSearchParams(location.search);
+const rid = params.get('id');
+const app = document.getElementById('app');
+
+function renderHeader(d) {
+  const photoCount = (d.photos || []).length;
+  return `
+    <header>
+      <h1>📦 ${escapeHtml(d.customer || '出货记录')}</h1>
+      <div class="meta">
+        <b>点位</b>${escapeHtml(d.position || '-')}<br>
+        <b>时间</b>${escapeHtml(d.dateTime || '-')}<br>
+        <b>照片</b>${photoCount} 张${d.hasVideo ? ' + 1 视频' : ''}
+      </div>
+    </header>
+  `;
+}
+
+function escapeHtml(s) {
+  return String(s == null ? '' : s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+
+async function load() {
+  if (!rid) {
+    app.innerHTML = `<div class="notfound"><h2>缺少 id 参数</h2><p>URL 应为 ?id=XXX</p></div>`;
+    return;
+  }
+  try {
+    const metaUrl = `data/${encodeURIComponent(rid)}.json`;
+    const resp = await fetch(metaUrl, { cache: 'no-store' });
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    const data = await resp.json();
+    render(data);
+  } catch (e) {
+    app.innerHTML = `<div class="notfound"><h2>未找到记录 ${escapeHtml(rid)}</h2><p>${escapeHtml(String(e))}</p></div>`;
+  }
+}
+
+function render(d) {
+  const photos = d.photos || [];
+  const photoImgs = photos.map((u, i) => `<img src="${escapeHtml(u)}" loading="lazy" alt="photo ${i + 1}">`).join('');
+  const videoBlock = d.video ? `<div class="video-block"><video src="${escapeHtml(d.video)}" controls preload="metadata" playsinline></video></div>` : '';
+  const remarkBlock = d.remark ? `<div class="remark">${escapeHtml(d.remark)}</div>` : '';
+  app.innerHTML = `
+    ${renderHeader(d)}
+    <div class="info">
+      <div class="info-row"><span class="k">出货点位</span><span class="v">${escapeHtml(d.position || '-')}</span></div>
+      <div class="info-row"><span class="k">出货时间</span><span class="v">${escapeHtml(d.dateTime || '-')}</span></div>
+      <div class="info-row"><span class="k">照片数量</span><span class="v">${photos.length} 张${d.hasVideo ? ' + 1 视频' : ''}</span></div>
+    </div>
+    ${remarkBlock}
+    ${videosCount(d) > 0 ? '<div class="section-title">📹 视频</div>' + videoBlock : ''}
+    ${photos.length > 0 ? '<div class="section-title">📷 照片</div><div class="gallery">' + photoImgs + '</div>' : ''}
+    <div class="footer">FSINT 出货记录 · ${escapeHtml(new Date().toLocaleString('zh-CN'))}</div>
+  `;
+}
+
+function videosCount(d) { return d.video ? 1 : 0; }
+
+load();
+</script>
+</body>
+</html>
