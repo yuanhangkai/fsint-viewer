@@ -1,0 +1,15 @@
+{
+  "id": "test123",
+  "customer": "测试客户A",
+  "position": "南山区科技园1号楼",
+  "dateTime": "2026-09-09 14:00",
+  "photoCount": 2,
+  "hasVideo": false,
+  "photos": [
+    "https://yuanhangkai.github.io/fsint-viewer/img/placeholder.svg",
+    "https://yuanhangkai.github.io/fsint-viewer/img/placeholder.svg"
+  ],
+  "video": null,
+  "remark": "这是一条端到端测试",
+  "updatedAt": 1694246400000
+}
