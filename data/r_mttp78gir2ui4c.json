@@ -1,0 +1,14 @@
+{
+  "id": "r_mttp78gir2ui4c",
+  "customer": "永胜",
+  "position": "三号位",
+  "dateTime": "2026-09-09 14:09",
+  "photoCount": 1,
+  "hasVideo": true,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mttp78gir2ui4c/photo_001.jpg"
+  ],
+  "video": "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mttp78gir2ui4c/video.mp4",
+  "remark": "",
+  "updatedAt": 1788934146287
+}
