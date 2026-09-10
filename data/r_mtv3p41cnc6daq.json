@@ -1,0 +1,17 @@
+{
+  "id": "r_mtv3p41cnc6daq",
+  "customer": "利讯",
+  "position": "64温区",
+  "dateTime": "2026-09-10 13:42",
+  "photoCount": 4,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mtv3p41cnc6daq/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mtv3p41cnc6daq/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mtv3p41cnc6daq/photo_003.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mtv3p41cnc6daq/photo_004.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1789018962359
+}
