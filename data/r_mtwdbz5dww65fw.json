@@ -1,0 +1,17 @@
+{
+  "id": "r_mtwdbz5dww65fw",
+  "customer": "广东伊之密",
+  "position": "40温区",
+  "dateTime": "2026-09-11 11:00",
+  "photoCount": 4,
+  "hasVideo": true,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mtwdbz5dww65fw/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mtwdbz5dww65fw/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mtwdbz5dww65fw/photo_003.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mtwdbz5dww65fw/photo_004.jpg"
+  ],
+  "video": "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mtwdbz5dww65fw/video.mp4",
+  "remark": "",
+  "updatedAt": 1789095622426
+}
