@@ -154,13 +154,6 @@ video { width: 100%; display: block; }
   font-size: 14px;
   flex: 0 0 auto;
 }
-#lb-close {
-  width: 34px; height: 34px;
-  border: 0; border-radius: 50%;
-  background: rgba(255,255,255,.14);
-  color: #fff; font-size: 20px; line-height: 1;
-  cursor: pointer;
-}
 #lb-stage {
   flex: 1 1 auto;
   display: flex;
@@ -212,7 +205,7 @@ video { width: 100%; display: block; }
 
 <div id="lightbox">
   <div id="lb-top">
-    <button id="lb-close" aria-label="关闭">✕</button>
+    <span style="width:34px"></span>
     <span id="lb-count">1 / 1</span>
     <span style="width:34px"></span>
   </div>
@@ -221,7 +214,7 @@ video { width: 100%; display: block; }
     <button id="lb-prev" aria-label="上一张">‹</button>
     <button id="lb-next" aria-label="下一张">›</button>
   </div>
-  <div id="lb-tip">双击放大 · 双指缩放 · 放大后可拖动</div>
+  <div id="lb-tip">点一下关闭 · 右滑关闭 · 双击放大</div>
 </div>
 
 <script>
@@ -313,6 +306,7 @@ function openLightbox(i) {
   syncLightbox();
 }
 function closeLightbox() {
+  if (tapTimer) { clearTimeout(tapTimer); tapTimer = null; }
   lb.classList.remove('on');
   document.body.style.overflow = '';
   resetZoom();
@@ -326,12 +320,9 @@ function syncLightbox() {
 }
 lbImg.addEventListener('load', resetZoom);
 
-document.getElementById('lb-close').addEventListener('click', closeLightbox);
+document.getElementById('lb-close') && document.getElementById('lb-close').addEventListener('click', closeLightbox);
 lbPrev.addEventListener('click', () => { if (lbIdx > 0) { lbIdx--; syncLightbox(); } });
 lbNext.addEventListener('click', () => { if (lbIdx < photoList.length - 1) { lbIdx++; syncLightbox(); } });
-lb.addEventListener('click', (e) => {
-  if (e.target.id === 'lb-stage') closeLightbox();   // 点背景关闭
-});
 document.addEventListener('keydown', (e) => {
   if (!lb.classList.contains('on')) return;
   if (e.key === 'Escape') closeLightbox();
@@ -339,43 +330,115 @@ document.addEventListener('keydown', (e) => {
   else if (e.key === 'ArrowRight' && lbIdx < photoList.length - 1) { lbIdx++; syncLightbox(); }
 });
 
-// 双指缩放 + 拖动
+// ===== 手势：点一下关闭 / 右滑关闭 / 双击放大 / 双指缩放 / 放大后拖动 =====
+const SWIPE_CLOSE_PX = 70;    // 右滑超过这个距离就关闭
+const TAP_MOVE_PX    = 12;    // 位移小于这个算"点击"
+const DOUBLE_TAP_MS  = 280;
+
 const dist = (t) => Math.hypot(t[0].clientX - t[1].clientX, t[0].clientY - t[1].clientY);
-let pinchStart = 0, pinchScale = 1, panStart = null;
+let pinchStart = 0, pinchScale = 1;
+let panStart = null;      // 放大后拖动
+let swipeStart = null;    // 未放大时横向跟手
+let tapStartPt = null;
+let moved = false;
+let tapTimer = null, lastTap = 0;
+
+function handleTap() {
+  const now = Date.now();
+  if (now - lastTap < DOUBLE_TAP_MS) {                 // 双击 → 缩放
+    if (tapTimer) { clearTimeout(tapTimer); tapTimer = null; }
+    lastTap = 0;
+    if (scale > 1) resetZoom(); else { scale = 2.5; tx = 0; ty = 0; applyZoom(); }
+    return;
+  }
+  lastTap = now;
+  if (tapTimer) clearTimeout(tapTimer);                // 单击 → 稍后关闭
+  tapTimer = setTimeout(() => { tapTimer = null; closeLightbox(); }, DOUBLE_TAP_MS);
+}
+
 lbImg.addEventListener('touchstart', (e) => {
   if (e.touches.length === 2) {
-    pinchStart = dist(e.touches); pinchScale = scale; panStart = null;
-  } else if (e.touches.length === 1 && scale > 1) {
-    panStart = { x: e.touches[0].clientX, y: e.touches[0].clientY, tx: tx, ty: ty };
+    pinchStart = dist(e.touches); pinchScale = scale;
+    panStart = null; swipeStart = null; tapStartPt = null;
+    return;
+  }
+  if (e.touches.length === 1) {
+    const p = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+    tapStartPt = p; moved = false;
+    if (scale > 1) { panStart = { x: p.x, y: p.y, tx: tx, ty: ty }; swipeStart = null; }
+    else           { swipeStart = p; panStart = null; }
   }
 }, { passive: true });
+
 lbImg.addEventListener('touchmove', (e) => {
   if (e.touches.length === 2 && pinchStart) {
     e.preventDefault();
     scale = Math.min(6, Math.max(1, pinchScale * (dist(e.touches) / pinchStart)));
     if (scale === 1) { tx = 0; ty = 0; }
     applyZoom();
-  } else if (e.touches.length === 1 && panStart) {
+    return;
+  }
+  const t = e.touches[0];
+  if (!t) return;
+  if (tapStartPt && Math.hypot(t.clientX - tapStartPt.x, t.clientY - tapStartPt.y) > TAP_MOVE_PX) moved = true;
+
+  if (scale > 1 && panStart) {
     e.preventDefault();
-    tx = panStart.tx + (e.touches[0].clientX - panStart.x);
-    ty = panStart.ty + (e.touches[0].clientY - panStart.y);
+    tx = panStart.tx + (t.clientX - panStart.x);
+    ty = panStart.ty + (t.clientY - panStart.y);
     applyZoom();
+    return;
+  }
+  if (scale <= 1.01 && swipeStart) {
+    const dx = t.clientX - swipeStart.x;
+    const dy = t.clientY - swipeStart.y;
+    if (Math.abs(dx) > Math.abs(dy)) {                 // 横向跟手
+      e.preventDefault();
+      lbImg.style.transition = 'none';
+      tx = dx; ty = 0;
+      applyZoom();
+    }
   }
 }, { passive: false });
-lbImg.addEventListener('touchend', () => { pinchStart = 0; if (scale <= 1.01) resetZoom(); });
 
-// 双击放大 / 还原
-let lastTap = 0;
-lbImg.addEventListener('touchend', () => {
-  const now = Date.now();
-  if (now - lastTap < 300) {
-    if (scale > 1) resetZoom(); else { scale = 2.5; tx = 0; ty = 0; applyZoom(); }
-    lastTap = 0;
-  } else lastTap = now;
+lbImg.addEventListener('touchend', (e) => {
+  if (pinchStart) {
+    pinchStart = 0;
+    if (scale <= 1.01) resetZoom();
+    panStart = null; swipeStart = null; tapStartPt = null;
+    return;
+  }
+  if (swipeStart) {
+    const dx = tx;
+    swipeStart = null;
+    if (dx > SWIPE_CLOSE_PX) { closeLightbox(); return; }
+    if (dx !== 0) {                                    // 没到阈值 → 弹回
+      lbImg.style.transition = 'transform .18s ease';
+      tx = 0; ty = 0; applyZoom();
+      setTimeout(() => { lbImg.style.transition = 'none'; }, 220);
+    }
+  }
+  panStart = null;
+  if (!moved && e.changedTouches && e.changedTouches.length === 1) handleTap();
 });
-lbImg.addEventListener('dblclick', () => {
-  if (scale > 1) resetZoom(); else { scale = 2.5; applyZoom(); }
-});
+
+// 桌面端：鼠标单击关闭（带双击判定）
+if (!('ontouchstart' in window)) {
+  lbImg.style.cursor = 'zoom-out';
+  let dTimer = null, dLast = 0;
+  lbImg.addEventListener('click', () => {
+    const now = Date.now();
+    if (now - dLast < DOUBLE_TAP_MS) {
+      if (dTimer) { clearTimeout(dTimer); dTimer = null; }
+      dLast = 0;
+      if (scale > 1) resetZoom(); else { scale = 2.5; tx = 0; ty = 0; applyZoom(); }
+      return;
+    }
+    dLast = now;
+    if (dTimer) clearTimeout(dTimer);
+    dTimer = setTimeout(() => { dTimer = null; closeLightbox(); }, DOUBLE_TAP_MS);
+  });
+}
 
 load();
 </script>
