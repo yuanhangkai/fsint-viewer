@@ -320,7 +320,6 @@ function syncLightbox() {
 }
 lbImg.addEventListener('load', resetZoom);
 
-document.getElementById('lb-close') && document.getElementById('lb-close').addEventListener('click', closeLightbox);
 lbPrev.addEventListener('click', () => { if (lbIdx > 0) { lbIdx--; syncLightbox(); } });
 lbNext.addEventListener('click', () => { if (lbIdx < photoList.length - 1) { lbIdx++; syncLightbox(); } });
 document.addEventListener('keydown', (e) => {
