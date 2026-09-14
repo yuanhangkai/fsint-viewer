@@ -1,0 +1,14 @@
+{
+  "id": "r_mu0jonucr3al5e",
+  "customer": "华瑞",
+  "position": "一号位",
+  "dateTime": "2026-09-14 09:09",
+  "photoCount": 1,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mu0jonucr3al5e/photo_001.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1789348144165
+}
