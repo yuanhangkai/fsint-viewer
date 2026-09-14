@@ -70,13 +70,32 @@ header .meta b {
   grid-template-columns: 1fr 1fr;
   gap: 6px;
 }
+.gallery figure {
+  position: relative;
+  margin: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #e5e7eb;
+  aspect-ratio: 3 / 4;
+  cursor: zoom-in;
+}
 .gallery img {
   width: 100%;
-  aspect-ratio: 3 / 4;
+  height: 100%;
   object-fit: cover;
-  border-radius: 8px;
-  background: #e5e7eb;
   display: block;
+}
+.gallery .zoom-hint {
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, .45);
+  color: #fff;
+  font-size: 10px;
+  line-height: 1.5;
+  pointer-events: none;
 }
 .remark {
   margin: 12px 14px 18px;
@@ -114,6 +133,76 @@ header .meta b {
   overflow: hidden;
 }
 video { width: 100%; display: block; }
+
+/* ===== 全屏看大图 ===== */
+#lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: #000;
+  display: none;
+  flex-direction: column;
+}
+#lightbox.on { display: flex; }
+#lb-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  padding-top: max(10px, env(safe-area-inset-top, 0px));
+  color: #fff;
+  font-size: 14px;
+  flex: 0 0 auto;
+}
+#lb-close {
+  width: 34px; height: 34px;
+  border: 0; border-radius: 50%;
+  background: rgba(255,255,255,.14);
+  color: #fff; font-size: 20px; line-height: 1;
+  cursor: pointer;
+}
+#lb-stage {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+#lb-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transform-origin: center center;
+  will-change: transform;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+#lb-nav {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 12px 0;
+  padding-bottom: max(12px, env(safe-area-inset-bottom, 0px));
+}
+#lb-nav button {
+  width: 46px; height: 46px;
+  border: 0; border-radius: 50%;
+  background: rgba(255,255,255,.14);
+  color: #fff; font-size: 20px;
+  cursor: pointer;
+}
+#lb-nav button:disabled { opacity: .3; }
+#lb-tip {
+  text-align: center;
+  color: rgba(255,255,255,.55);
+  font-size: 11px;
+  padding-bottom: 10px;
+  flex: 0 0 auto;
+}
 </style>
 </head>
 <body>
@@ -121,10 +210,33 @@ video { width: 100%; display: block; }
   <div class="loading">加载出货记录中...</div>
 </div>
 
+<div id="lightbox">
+  <div id="lb-top">
+    <button id="lb-close" aria-label="关闭">✕</button>
+    <span id="lb-count">1 / 1</span>
+    <span style="width:34px"></span>
+  </div>
+  <div id="lb-stage"><img id="lb-img" alt=""></div>
+  <div id="lb-nav">
+    <button id="lb-prev" aria-label="上一张">‹</button>
+    <button id="lb-next" aria-label="下一张">›</button>
+  </div>
+  <div id="lb-tip">双击放大 · 双指缩放 · 放大后可拖动</div>
+</div>
+
 <script>
 const params = new URLSearchParams(location.search);
 const rid = params.get('id');
 const app = document.getElementById('app');
+
+let photoList = [];   // 全屏查看用的 URL 列表
+let lbIdx = 0;
+
+function escapeHtml(s) {
+  return String(s == null ? '' : s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
 
 function renderHeader(d) {
   const photoCount = (d.photos || []).length;
@@ -138,12 +250,6 @@ function renderHeader(d) {
       </div>
     </header>
   `;
-}
-
-function escapeHtml(s) {
-  return String(s == null ? '' : s)
-    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
 async function load() {
@@ -164,7 +270,10 @@ async function load() {
 
 function render(d) {
   const photos = d.photos || [];
-  const photoImgs = photos.map((u, i) => `<img src="${escapeHtml(u)}" loading="lazy" alt="photo ${i + 1}">`).join('');
+  photoList = photos;
+  const photoImgs = photos.map((u, i) =>
+    `<figure data-idx="${i}"><img src="${escapeHtml(u)}" loading="lazy" alt="照片 ${i + 1}"><span class="zoom-hint">点开放大</span></figure>`
+  ).join('');
   const videoBlock = d.video ? `<div class="video-block"><video src="${escapeHtml(d.video)}" controls preload="metadata" playsinline></video></div>` : '';
   const remarkBlock = d.remark ? `<div class="remark">${escapeHtml(d.remark)}</div>` : '';
   app.innerHTML = `
@@ -175,13 +284,98 @@ function render(d) {
       <div class="info-row"><span class="k">照片数量</span><span class="v">${photos.length} 张${d.hasVideo ? ' + 1 视频' : ''}</span></div>
     </div>
     ${remarkBlock}
-    ${videosCount(d) > 0 ? '<div class="section-title">📹 视频</div>' + videoBlock : ''}
-    ${photos.length > 0 ? '<div class="section-title">📷 照片</div><div class="gallery">' + photoImgs + '</div>' : ''}
+    ${d.video ? '<div class="section-title">📹 视频</div>' + videoBlock : ''}
+    ${photos.length > 0 ? '<div class="section-title">📷 照片（点开可放大）</div><div class="gallery">' + photoImgs + '</div>' : ''}
     <div class="footer">FSINT 出货记录 · ${escapeHtml(new Date().toLocaleString('zh-CN'))}</div>
   `;
+
+  document.querySelectorAll('.gallery figure').forEach(fig => {
+    fig.addEventListener('click', () => openLightbox(parseInt(fig.dataset.idx, 10) || 0));
+  });
 }
 
-function videosCount(d) { return d.video ? 1 : 0; }
+/* ================= 全屏看大图 ================= */
+const lb     = document.getElementById('lightbox');
+const lbImg  = document.getElementById('lb-img');
+const lbCnt  = document.getElementById('lb-count');
+const lbPrev = document.getElementById('lb-prev');
+const lbNext = document.getElementById('lb-next');
+
+let scale = 1, tx = 0, ty = 0;
+function applyZoom() { lbImg.style.transform = 'translate(' + tx + 'px,' + ty + 'px) scale(' + scale + ')'; }
+function resetZoom() { scale = 1; tx = 0; ty = 0; applyZoom(); }
+
+function openLightbox(i) {
+  if (!photoList.length) return;
+  lbIdx = Math.max(0, Math.min(photoList.length - 1, i));
+  lb.classList.add('on');
+  document.body.style.overflow = 'hidden';
+  syncLightbox();
+}
+function closeLightbox() {
+  lb.classList.remove('on');
+  document.body.style.overflow = '';
+  resetZoom();
+}
+function syncLightbox() {
+  lbImg.src = photoList[lbIdx];
+  lbCnt.textContent = (lbIdx + 1) + ' / ' + photoList.length;
+  lbPrev.disabled = lbIdx === 0;
+  lbNext.disabled = lbIdx === photoList.length - 1;
+  resetZoom();
+}
+lbImg.addEventListener('load', resetZoom);
+
+document.getElementById('lb-close').addEventListener('click', closeLightbox);
+lbPrev.addEventListener('click', () => { if (lbIdx > 0) { lbIdx--; syncLightbox(); } });
+lbNext.addEventListener('click', () => { if (lbIdx < photoList.length - 1) { lbIdx++; syncLightbox(); } });
+lb.addEventListener('click', (e) => {
+  if (e.target.id === 'lb-stage') closeLightbox();   // 点背景关闭
+});
+document.addEventListener('keydown', (e) => {
+  if (!lb.classList.contains('on')) return;
+  if (e.key === 'Escape') closeLightbox();
+  else if (e.key === 'ArrowLeft' && lbIdx > 0) { lbIdx--; syncLightbox(); }
+  else if (e.key === 'ArrowRight' && lbIdx < photoList.length - 1) { lbIdx++; syncLightbox(); }
+});
+
+// 双指缩放 + 拖动
+const dist = (t) => Math.hypot(t[0].clientX - t[1].clientX, t[0].clientY - t[1].clientY);
+let pinchStart = 0, pinchScale = 1, panStart = null;
+lbImg.addEventListener('touchstart', (e) => {
+  if (e.touches.length === 2) {
+    pinchStart = dist(e.touches); pinchScale = scale; panStart = null;
+  } else if (e.touches.length === 1 && scale > 1) {
+    panStart = { x: e.touches[0].clientX, y: e.touches[0].clientY, tx: tx, ty: ty };
+  }
+}, { passive: true });
+lbImg.addEventListener('touchmove', (e) => {
+  if (e.touches.length === 2 && pinchStart) {
+    e.preventDefault();
+    scale = Math.min(6, Math.max(1, pinchScale * (dist(e.touches) / pinchStart)));
+    if (scale === 1) { tx = 0; ty = 0; }
+    applyZoom();
+  } else if (e.touches.length === 1 && panStart) {
+    e.preventDefault();
+    tx = panStart.tx + (e.touches[0].clientX - panStart.x);
+    ty = panStart.ty + (e.touches[0].clientY - panStart.y);
+    applyZoom();
+  }
+}, { passive: false });
+lbImg.addEventListener('touchend', () => { pinchStart = 0; if (scale <= 1.01) resetZoom(); });
+
+// 双击放大 / 还原
+let lastTap = 0;
+lbImg.addEventListener('touchend', () => {
+  const now = Date.now();
+  if (now - lastTap < 300) {
+    if (scale > 1) resetZoom(); else { scale = 2.5; tx = 0; ty = 0; applyZoom(); }
+    lastTap = 0;
+  } else lastTap = now;
+});
+lbImg.addEventListener('dblclick', () => {
+  if (scale > 1) resetZoom(); else { scale = 2.5; applyZoom(); }
+});
 
 load();
 </script>
