@@ -2,13 +2,14 @@
   "id": "r_mu0lko1nbkgp0x",
   "customer": "永胜",
   "position": "二号位",
-  "dateTime": "2026-09-14 10:01",
-  "photoCount": 1,
+  "dateTime": "2026-09-14 10:32",
+  "photoCount": 2,
   "hasVideo": false,
   "photos": [
-    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mu0lko1nbkgp0x/photo_001.jpg"
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mu0lko1nbkgp0x/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mu0lko1nbkgp0x/photo_002.jpg"
   ],
   "video": null,
   "remark": "",
-  "updatedAt": 1789351317420
+  "updatedAt": 1789353171287
 }
