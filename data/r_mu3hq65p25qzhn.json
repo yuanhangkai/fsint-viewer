@@ -1,0 +1,17 @@
+{
+  "id": "r_mu3hq65p25qzhn",
+  "customer": "震德精密",
+  "position": "12温区",
+  "dateTime": "2026-09-16 10:37",
+  "photoCount": 4,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mu3hq65p25qzhn/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mu3hq65p25qzhn/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mu3hq65p25qzhn/photo_003.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mu3hq65p25qzhn/photo_004.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1789526257032
+}
