@@ -1,0 +1,15 @@
+{
+  "id": "r_mu3qb4is0pltp0",
+  "customer": "青岛海塑",
+  "position": "时序器",
+  "dateTime": "2026-09-16 14:37",
+  "photoCount": 2,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mu3qb4is0pltp0/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mu3qb4is0pltp0/photo_002.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1789540669377
+}
