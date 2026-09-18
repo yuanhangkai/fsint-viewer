@@ -1,0 +1,17 @@
+{
+  "id": "r_mu6jwdz050tli5",
+  "customer": "莱俊德",
+  "position": "12温区",
+  "dateTime": "2026-09-18 14:01",
+  "photoCount": 4,
+  "hasVideo": true,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mu6jwdz050tli5/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mu6jwdz050tli5/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mu6jwdz050tli5/photo_003.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mu6jwdz050tli5/photo_004.jpg"
+  ],
+  "video": "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mu6jwdz050tli5/video.mp4",
+  "remark": "",
+  "updatedAt": 1789711353436
+}
