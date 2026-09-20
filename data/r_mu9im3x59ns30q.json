@@ -1,0 +1,16 @@
+{
+  "id": "r_mu9im3x59ns30q",
+  "customer": "圣博",
+  "position": "28温区",
+  "dateTime": "2026-09-20 15:49",
+  "photoCount": 3,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mu9im3x59ns30q/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mu9im3x59ns30q/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mu9im3x59ns30q/photo_003.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1789890542063
+}
