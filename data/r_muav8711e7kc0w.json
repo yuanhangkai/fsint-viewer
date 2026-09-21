@@ -1,0 +1,16 @@
+{
+  "id": "r_muav8711e7kc0w",
+  "customer": "苏州伊之密",
+  "position": "线缆",
+  "dateTime": "2026-09-21 14:29",
+  "photoCount": 3,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_muav8711e7kc0w/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_muav8711e7kc0w/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_muav8711e7kc0w/photo_003.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1789972199694
+}
