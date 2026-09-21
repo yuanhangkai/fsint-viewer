@@ -1,0 +1,17 @@
+{
+  "id": "r_muav3t0idpizgx",
+  "customer": "广东伊之密",
+  "position": "12温区",
+  "dateTime": "2026-09-21 14:26",
+  "photoCount": 4,
+  "hasVideo": true,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_muav3t0idpizgx/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_muav3t0idpizgx/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_muav3t0idpizgx/photo_003.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_muav3t0idpizgx/photo_004.jpg"
+  ],
+  "video": "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_muav3t0idpizgx/video.mp4",
+  "remark": "",
+  "updatedAt": 1789972016333
+}
