@@ -1,0 +1,16 @@
+{
+  "id": "r_muc360mt3mjovp",
+  "customer": "塑优佳",
+  "position": "18温区",
+  "dateTime": "2026-09-22 10:59",
+  "photoCount": 3,
+  "hasVideo": true,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_muc360mt3mjovp/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_muc360mt3mjovp/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_muc360mt3mjovp/photo_003.jpg"
+  ],
+  "video": "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_muc360mt3mjovp/video.mp4",
+  "remark": "",
+  "updatedAt": 1790046203821
+}
