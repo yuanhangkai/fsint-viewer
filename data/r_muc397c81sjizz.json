@@ -1,0 +1,16 @@
+{
+  "id": "r_muc397c81sjizz",
+  "customer": "塑优佳",
+  "position": "24温区",
+  "dateTime": "2026-09-22 11:02",
+  "photoCount": 3,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_muc397c81sjizz/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_muc397c81sjizz/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_muc397c81sjizz/photo_003.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1790046163411
+}
