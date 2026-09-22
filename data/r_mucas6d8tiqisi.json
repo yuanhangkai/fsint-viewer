@@ -1,0 +1,17 @@
+{
+  "id": "r_mucas6d8tiqisi",
+  "customer": "永舜",
+  "position": "4温区",
+  "dateTime": "2026-09-22 14:33",
+  "photoCount": 4,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mucas6d8tiqisi/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mucas6d8tiqisi/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mucas6d8tiqisi/photo_003.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mucas6d8tiqisi/photo_004.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1790058788034
+}
