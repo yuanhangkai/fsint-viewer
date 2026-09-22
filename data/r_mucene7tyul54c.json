@@ -1,0 +1,17 @@
+{
+  "id": "r_mucene7tyul54c",
+  "customer": "圣博",
+  "position": "6温区",
+  "dateTime": "2026-09-22 16:21",
+  "photoCount": 4,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mucene7tyul54c/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mucene7tyul54c/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mucene7tyul54c/photo_003.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mucene7tyul54c/photo_004.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1790065285393
+}
