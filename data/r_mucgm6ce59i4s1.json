@@ -1,0 +1,15 @@
+{
+  "id": "r_mucgm6ce59i4s1",
+  "customer": "震雄",
+  "position": "",
+  "dateTime": "2026-09-22 17:16",
+  "photoCount": 2,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mucgm6ce59i4s1/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mucgm6ce59i4s1/photo_002.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1790068584703
+}
