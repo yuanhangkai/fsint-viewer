@@ -1,0 +1,17 @@
+{
+  "id": "r_muesycmbf26ciw",
+  "customer": "苏州伊之密",
+  "position": "48温区",
+  "dateTime": "2026-09-24 08:37",
+  "photoCount": 4,
+  "hasVideo": true,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_muesycmbf26ciw/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_muesycmbf26ciw/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_muesycmbf26ciw/photo_003.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_muesycmbf26ciw/photo_004.jpg"
+  ],
+  "video": "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_muesycmbf26ciw/video.mp4",
+  "remark": "",
+  "updatedAt": 1790211315664
+}
