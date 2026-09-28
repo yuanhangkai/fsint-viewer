@@ -1,0 +1,17 @@
+{
+  "id": "r_mukwa1kpl4i5lo",
+  "customer": "康非",
+  "position": "2温区",
+  "dateTime": "2026-09-28 14:57",
+  "photoCount": 4,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mukwa1kpl4i5lo/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mukwa1kpl4i5lo/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mukwa1kpl4i5lo/photo_003.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mukwa1kpl4i5lo/photo_004.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1790578623633
+}
