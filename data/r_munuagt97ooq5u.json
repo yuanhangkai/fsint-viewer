@@ -1,0 +1,17 @@
+{
+  "id": "r_munuagt97ooq5u",
+  "customer": "红石柱",
+  "position": "7温区",
+  "dateTime": "2026-09-30 16:24",
+  "photoCount": 4,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_munuagt97ooq5u/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_munuagt97ooq5u/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_munuagt97ooq5u/photo_003.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_munuagt97ooq5u/photo_004.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1790756681342
+}
