@@ -1,0 +1,17 @@
+{
+  "id": "r_muz5w8d0p2wvzb",
+  "customer": "红石柱",
+  "position": "22温区",
+  "dateTime": "2026-10-08 14:34",
+  "photoCount": 4,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_muz5w8d0p2wvzb/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_muz5w8d0p2wvzb/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_muz5w8d0p2wvzb/photo_003.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_muz5w8d0p2wvzb/photo_004.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1791441299921
+}
