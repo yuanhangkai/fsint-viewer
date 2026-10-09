@@ -1,0 +1,17 @@
+{
+  "id": "r_mv0nky9a24yvzb",
+  "customer": "广东伊之密",
+  "position": "改制",
+  "dateTime": "2026-10-09 15:37",
+  "photoCount": 4,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mv0nky9a24yvzb/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mv0nky9a24yvzb/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mv0nky9a24yvzb/photo_003.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mv0nky9a24yvzb/photo_004.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1791531473549
+}
