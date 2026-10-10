@@ -1,0 +1,17 @@
+{
+  "id": "r_mv1yviuylt40cj",
+  "customer": "颂巧",
+  "position": "8点时序",
+  "dateTime": "2026-10-10 13:41",
+  "photoCount": 4,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mv1yviuylt40cj/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mv1yviuylt40cj/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mv1yviuylt40cj/photo_003.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mv1yviuylt40cj/photo_004.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1791610908869
+}
