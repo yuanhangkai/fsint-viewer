@@ -1,0 +1,17 @@
+{
+  "id": "r_mv1zye8tbufxty",
+  "customer": "苏州伊之密",
+  "position": "64温区",
+  "dateTime": "2026-10-10 14:12",
+  "photoCount": 4,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mv1zye8tbufxty/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mv1zye8tbufxty/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mv1zye8tbufxty/photo_003.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mv1zye8tbufxty/photo_004.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1791612726736
+}
