@@ -1,0 +1,17 @@
+{
+  "id": "r_mv6drjl5l1ih7f",
+  "customer": "湘豪",
+  "position": "4温区",
+  "dateTime": "2026-10-13 15:49",
+  "photoCount": 4,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mv6drjl5l1ih7f/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mv6drjl5l1ih7f/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mv6drjl5l1ih7f/photo_003.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mv6drjl5l1ih7f/photo_004.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1791877783307
+}
