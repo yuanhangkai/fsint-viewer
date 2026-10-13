@@ -1,0 +1,16 @@
+{
+  "id": "r_mv6dn24xuxo828",
+  "customer": "金马泰",
+  "position": "时序器",
+  "dateTime": "2026-10-13 15:46",
+  "photoCount": 3,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mv6dn24xuxo828/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mv6dn24xuxo828/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mv6dn24xuxo828/photo_003.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1791877572344
+}
