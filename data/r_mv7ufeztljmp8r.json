@@ -1,0 +1,16 @@
+{
+  "id": "r_mv7ufeztljmp8r",
+  "customer": "震雄",
+  "position": "12温区",
+  "dateTime": "2026-10-14 16:23",
+  "photoCount": 3,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mv7ufeztljmp8r/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mv7ufeztljmp8r/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mv7ufeztljmp8r/photo_003.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1791966235189
+}
