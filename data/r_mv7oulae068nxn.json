@@ -1,0 +1,17 @@
+{
+  "id": "r_mv7oulae068nxn",
+  "customer": "凯吉",
+  "position": "2温区",
+  "dateTime": "2026-10-14 13:47",
+  "photoCount": 4,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mv7oulae068nxn/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mv7oulae068nxn/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mv7oulae068nxn/photo_003.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mv7oulae068nxn/photo_004.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1791956876815
+}
