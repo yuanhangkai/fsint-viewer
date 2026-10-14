@@ -1,0 +1,17 @@
+{
+  "id": "r_mv7su17qj03y7e",
+  "customer": "永舜",
+  "position": "线缆",
+  "dateTime": "2026-10-14 15:39",
+  "photoCount": 4,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mv7su17qj03y7e/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mv7su17qj03y7e/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mv7su17qj03y7e/photo_003.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mv7su17qj03y7e/photo_004.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1791963560816
+}
