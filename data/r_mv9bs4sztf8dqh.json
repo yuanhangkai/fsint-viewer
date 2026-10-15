@@ -1,0 +1,17 @@
+{
+  "id": "r_mv9bs4sztf8dqh",
+  "customer": "香河彬睿",
+  "position": "36温区",
+  "dateTime": "2026-10-15 17:17",
+  "photoCount": 4,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mv9bs4sztf8dqh/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mv9bs4sztf8dqh/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mv9bs4sztf8dqh/photo_003.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mv9bs4sztf8dqh/photo_004.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1792055848753
+}
