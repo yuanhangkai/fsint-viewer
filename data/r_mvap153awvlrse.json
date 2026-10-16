@@ -1,0 +1,17 @@
+{
+  "id": "r_mvap153awvlrse",
+  "customer": "腾盛",
+  "position": "42温区",
+  "dateTime": "2026-10-16 16:16",
+  "photoCount": 4,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvap153awvlrse/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvap153awvlrse/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvap153awvlrse/photo_003.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvap153awvlrse/photo_004.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1792138570145
+}
