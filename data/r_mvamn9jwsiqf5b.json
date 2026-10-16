@@ -1,0 +1,16 @@
+{
+  "id": "r_mvamn9jwsiqf5b",
+  "customer": "好特斯",
+  "position": "9温区",
+  "dateTime": "2026-10-16 15:09",
+  "photoCount": 3,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvamn9jwsiqf5b/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvamn9jwsiqf5b/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvamn9jwsiqf5b/photo_003.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1792134563333
+}
