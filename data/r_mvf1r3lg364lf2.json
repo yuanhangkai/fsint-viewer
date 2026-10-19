@@ -1,0 +1,16 @@
+{
+  "id": "r_mvf1r3lg364lf2",
+  "customer": "越洋达",
+  "position": "时序器",
+  "dateTime": "2026-10-19 17:23",
+  "photoCount": 3,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvf1r3lg364lf2/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvf1r3lg364lf2/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvf1r3lg364lf2/photo_003.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1792401805483
+}
