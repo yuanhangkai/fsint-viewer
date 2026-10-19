@@ -1,0 +1,17 @@
+{
+  "id": "r_mvezkgvjbkbbrn",
+  "customer": "越洋达",
+  "position": "6温区",
+  "dateTime": "2026-10-19 16:22",
+  "photoCount": 4,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvezkgvjbkbbrn/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvezkgvjbkbbrn/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvezkgvjbkbbrn/photo_003.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvezkgvjbkbbrn/photo_004.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1792398132755
+}
