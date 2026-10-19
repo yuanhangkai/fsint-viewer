@@ -1,0 +1,17 @@
+{
+  "id": "r_mvezajfngyaw43",
+  "customer": "文慧智能",
+  "position": "48温区",
+  "dateTime": "2026-10-19 16:14",
+  "photoCount": 4,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvezajfngyaw43/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvezajfngyaw43/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvezajfngyaw43/photo_003.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvezajfngyaw43/photo_004.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1792397671444
+}
