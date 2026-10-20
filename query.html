@@ -371,17 +371,28 @@ footer { text-align: center; font-size: 11.5px; color: #b6bcc7; padding: 18px 0 
 
   // ---------- 渲染 ----------
   function renderChrome() {
+    var first = '', last = '';
+    if (state.all.length) {
+      // all 已按 updatedAt 降序，最后一条就是最早的
+      last  = (state.all[0].dateTime || '').slice(0, 10);
+      first = (state.all[state.all.length - 1].dateTime || '').slice(0, 10);
+    }
     if (state.loading) {
       $sub.textContent = '正在加载…';
     } else if (state.error) {
       $sub.textContent = '加载失败';
     } else {
       var n = filtered().length;
-      $sub.textContent = (n === state.all.length)
-        ? ('共 ' + state.all.length + ' 条记录')
-        : ('匹配 ' + n + ' / ' + state.all.length + ' 条');
+      if (n === state.all.length) {
+        $sub.textContent = '共 ' + state.all.length + ' 条' +
+          (first && last ? (' · ' + first + ' ~ ' + last) : '');
+      } else {
+        $sub.textContent = '匹配 ' + n + ' / ' + state.all.length + ' 条';
+      }
     }
-    $foot.textContent = state.all.length ? '点击任意记录查看照片详情' : '';
+    $foot.textContent = state.all.length
+      ? ('已加载全部 ' + state.all.length + ' 条历史记录 · 点击记录查看详情')
+      : '';
   }
 
   function highlight(text, tokens) {
