@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+<title>出货记录查询</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+html, body { width: 100%; min-height: 100%; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft YaHei", sans-serif;
+  background: #f5f7fa;
+  color: #1f2937;
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: calc(20px + env(safe-area-inset-bottom));
+}
+
+/* ---------- 顶部 ---------- */
+header {
+  background: linear-gradient(135deg, #1677ff 0%, #0b5ed7 100%);
+  color: #fff;
+  padding: 18px 18px 22px;
+  padding-top: max(18px, calc(env(safe-area-inset-top, 0px) + 10px));
+}
+.hd-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+header h1 { font-size: 19px; font-weight: 600; letter-spacing: .3px; }
+header .sub { font-size: 12.5px; opacity: .85; margin-top: 5px; }
+#refresh {
+  flex: 0 0 auto;
+  border: 0; background: rgba(255,255,255,.18);
+  color: #fff; font-size: 12.5px;
+  padding: 7px 12px; border-radius: 999px;
+  display: flex; align-items: center; gap: 4px;
+  cursor: pointer;
+}
+#refresh:active { background: rgba(255,255,255,.3); }
+#refresh.busy svg { animation: spin .8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ---------- 粘性搜索区 ---------- */
+.sticky {
+  position: sticky; top: 0; z-index: 20;
+  background: #f5f7fa;
+  padding: 10px 14px 8px;
+  box-shadow: 0 1px 0 rgba(0,0,0,.04);
+}
+.searchbox {
+  position: relative;
+  display: flex; align-items: center;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.06);
+  padding: 0 10px;
+  height: 42px;
+}
+.searchbox svg { flex: 0 0 auto; color: #9ca3af; }
+#q {
+  flex: 1; min-width: 0;
+  border: 0; outline: 0; background: transparent;
+  font-size: 15px; color: #1f2937;
+  padding: 0 8px;
+  font-family: inherit;
+}
+#q::placeholder { color: #b3b8c2; }
+#clear {
+  flex: 0 0 auto;
+  width: 22px; height: 22px; border-radius: 50%;
+  border: 0; background: #d7dbe3; color: #fff;
+  font-size: 13px; line-height: 1;
+  display: none; align-items: center; justify-content: center;
+  cursor: pointer;
+}
+#clear.on { display: flex; }
+
+.chips {
+  display: flex; gap: 8px;
+  overflow-x: auto; white-space: nowrap;
+  padding: 9px 0 1px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.chips::-webkit-scrollbar { display: none; }
+.chip {
+  flex: 0 0 auto;
+  border: 0; background: #fff; color: #4b5563;
+  font-size: 13px; padding: 6px 13px; border-radius: 999px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.05);
+  cursor: pointer;
+}
+.chip.active { background: #1677ff; color: #fff; box-shadow: 0 2px 6px rgba(22,119,255,.32); }
+
+/* ---------- 列表 ---------- */
+main { padding: 0 14px; }
+.hint-bar {
+  font-size: 12.5px; color: #8b93a1;
+  padding: 4px 2px 8px;
+}
+.date-head {
+  font-size: 12.5px; font-weight: 600; color: #8b93a1;
+  padding: 12px 2px 7px;
+  display: flex; align-items: center; gap: 6px;
+}
+.date-head .cnt { font-weight: 400; color: #b0b6c1; }
+
+.card {
+  display: flex; align-items: center; gap: 11px;
+  background: #fff;
+  border-radius: 13px;
+  padding: 10px;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.05);
+  text-decoration: none; color: inherit;
+  transition: transform .12s ease;
+}
+.card:active { transform: scale(.985); background: #fafbfd; }
+.card .thumb {
+  flex: 0 0 auto;
+  width: 62px; height: 62px;
+  border-radius: 9px; overflow: hidden;
+  background: #eef1f5;
+}
+.card .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.card .body { flex: 1; min-width: 0; }
+.card .title {
+  font-size: 15px; font-weight: 600; color: #111827;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.card .title mark { background: #fff1b8; color: inherit; border-radius: 2px; padding: 0 1px; }
+.card .meta {
+  font-size: 12.5px; color: #8b93a1; margin-top: 4px;
+  display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
+}
+.card .badge {
+  display: inline-flex; align-items: center; gap: 3px;
+  background: #eef4ff; color: #1677ff;
+  padding: 1px 6px; border-radius: 4px; font-size: 11.5px;
+}
+.card .badge.v { background: #eefaf1; color: #16a34a; }
+.card .remark {
+  font-size: 12px; color: #b45309;
+  margin-top: 4px;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.card .chev { flex: 0 0 auto; color: #cbd2dc; }
+
+/* ---------- 热门客户 ---------- */
+.hot { padding: 2px 0 6px; }
+.hot .lbl { font-size: 12.5px; color: #8b93a1; padding: 4px 2px 8px; }
+.hot .row { display: flex; flex-wrap: wrap; gap: 7px; }
+.hot button {
+  border: 0; background: #fff; color: #374151;
+  font-size: 13px; padding: 7px 12px; border-radius: 9px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.05);
+  cursor: pointer;
+}
+.hot button:active { background: #eef4ff; color: #1677ff; }
+
+/* ---------- 状态 ---------- */
+.state { text-align: center; padding: 70px 24px; color: #9aa2af; font-size: 14px; }
+.state .big { font-size: 15px; color: #6b7280; margin-bottom: 6px; font-weight: 500; }
+.state button {
+  margin-top: 16px; border: 0; background: #1677ff; color: #fff;
+  font-size: 14px; padding: 9px 20px; border-radius: 999px; cursor: pointer;
+}
+.skeleton { padding: 6px 0; }
+.sk {
+  height: 82px; border-radius: 13px; margin-bottom: 8px;
+  background: linear-gradient(90deg, #eceff4 25%, #f6f8fb 37%, #eceff4 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.3s ease infinite;
+}
+@keyframes shimmer { 0% { background-position: 100% 50% } 100% { background-position: 0 50% } }
+footer { text-align: center; font-size: 11.5px; color: #b6bcc7; padding: 18px 0 6px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hd-row">
+    <div>
+      <h1>出货记录查询</h1>
+      <div class="sub" id="sub">正在加载…</div>
+    </div>
+    <button id="refresh" aria-label="刷新">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/>
+      </svg>
+      <span>刷新</span>
+    </button>
+  </div>
+</header>
+
+<div class="sticky">
+  <div class="searchbox">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+      <circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>
+    </svg>
+    <input id="q" type="search" enterkeyhint="search" autocomplete="off"
+           placeholder="客户 / 点位 / 日期，如 10-20">
+    <button id="clear" aria-label="清空">✕</button>
+  </div>
+  <div class="chips" id="chips">
+    <button class="chip active" data-range="all">全部</button>
+    <button class="chip" data-range="today">今天</button>
+    <button class="chip" data-range="7d">近 7 天</button>
+    <button class="chip" data-range="month">本月</button>
+  </div>
+</div>
+
+<main>
+  <div id="hot"></div>
+  <div class="hint-bar" id="hint" style="display:none"></div>
+  <div id="list"><div class="skeleton"><div class="sk"></div><div class="sk"></div><div class="sk"></div><div class="sk"></div></div></div>
+</main>
+
+<footer id="foot"></footer>
+
+<script>
+(function () {
+  'use strict';
+
+  var INDEX_URL = 'data/_index.json';
+  var CACHE_KEY = 'fsint_index_v1';
+  var PAGE_URL = 'index.html?id=';
+
+  var state = { all: [], range: 'all', keyword: '', loading: true, error: '' };
+
+  var $q      = document.getElementById('q');
+  var $clear  = document.getElementById('clear');
+  var $list   = document.getElementById('list');
+  var $sub    = document.getElementById('sub');
+  var $hint   = document.getElementById('hint');
+  var $hot    = document.getElementById('hot');
+  var $foot   = document.getElementById('foot');
+  var $refresh= document.getElementById('refresh');
+
+  // ---------- 工具 ----------
+  function esc(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+  function pad(n) { return n < 10 ? '0' + n : '' + n; }
+  function todayKey(d) {
+    d = d || new Date();
+    return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+  }
+  function parseDate(s) {
+    // "2026-10-20 15:58"
+    var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(s || '');
+    if (!m) return null;
+    return new Date(+m[1], +m[2] - 1, +m[3]);
+  }
+  function dayKey(s) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(s || '');
+    return m ? m[1] + '-' + m[2] + '-' + m[3] : '';
+  }
+  function prettyDay(key) {
+    var d = parseDate(key);
+    if (!d) return key;
+    var t = new Date();
+    var y = new Date(t.getTime() - 86400000);
+    var wd = ['周日','周一','周二','周三','周四','周五','周六'][d.getDay()];
+    var base = (d.getMonth() + 1) + '月' + d.getDate() + '日 ' + wd;
+    if (key === todayKey(t)) return '今天 · ' + base;
+    if (key === todayKey(y)) return '昨天 · ' + base;
+    if (d.getFullYear() !== t.getFullYear()) return d.getFullYear() + '年' + base;
+    return base;
+  }
+  function shortTime(s) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})\s+(\d{2}):(\d{2})/.exec(s || '');
+    if (!m) return s || '';
+    return m[4] + ':' + m[5];
+  }
+  // 把「10月20日」「10-20」「20261020」都归一成纯数字串
+  function digitsOf(s) {
+    return String(s || '').replace(/[^\d]/g, '');
+  }
+
+  // ---------- 数据 ----------
+  function readCache() {
+    try {
+      var raw = localStorage.getItem(CACHE_KEY);
+      if (!raw) return null;
+      var o = JSON.parse(raw);
+      if (!o || !Array.isArray(o.data)) return null;
+      return o;
+    } catch (e) { return null; }
+  }
+  function writeCache(data) {
+    try {
+      localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), data: data }));
+    } catch (e) {}
+  }
+
+  function load(force) {
+    var c = readCache();
+    if (c && state.all.length === 0) {
+      state.all = c.data;
+      state.loading = false;
+      render();
+    }
+    state.error = '';
+    if (!c) state.loading = true;
+    renderChrome();
+
+    var url = INDEX_URL + '?t=' + Date.now();
+    fetch(url, { cache: 'no-store' })
+      .then(function (r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      })
+      .then(function (arr) {
+        if (!Array.isArray(arr)) throw new Error('数据格式错误');
+        state.all = arr;
+        state.loading = false;
+        state.error = '';
+        writeCache(arr);
+        render();
+      })
+      .catch(function (e) {
+        state.loading = false;
+        if (state.all.length === 0) {
+          state.error = (e && e.message) || '加载失败';
+        }
+        render();
+      });
+  }
+
+  // ---------- 过滤 ----------
+  function inRange(rec) {
+    if (state.range === 'all') return true;
+    var d = parseDate(rec.dateTime);
+    if (!d) return false;
+    var now = new Date();
+    var t0 = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    if (state.range === 'today') return dayKey(rec.dateTime) === todayKey(now);
+    if (state.range === '7d') {
+      var from = new Date(t0.getTime() - 6 * 86400000);
+      return d >= from && d <= new Date(t0.getTime() + 86400000);
+    }
+    if (state.range === 'month') {
+      return d.getFullYear() === now.getFullYear() && d.getMonth() === now.getMonth();
+    }
+    return true;
+  }
+
+  function matches(rec, tokens) {
+    if (!tokens.length) return true;
+    var blob = (rec.customer + ' ' + rec.position + ' ' + (rec.remark || '') + ' ' + rec.dateTime).toLowerCase();
+    var dg = digitsOf(rec.dateTime);
+    for (var i = 0; i < tokens.length; i++) {
+      var t = tokens[i];
+      var td = digitsOf(t);
+      if (td && /^[\d\-\/\.月日号\s]+$/.test(t)) {
+        if (dg.indexOf(td) === -1) return false;
+      } else if (blob.indexOf(t.toLowerCase()) === -1) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  function filtered() {
+    var tokens = state.keyword.trim().split(/\s+/).filter(Boolean);
+    return state.all.filter(function (r) {
+      return inRange(r) && matches(r, tokens);
+    });
+  }
+
+  // ---------- 渲染 ----------
+  function renderChrome() {
+    if (state.loading) {
+      $sub.textContent = '正在加载…';
+    } else if (state.error) {
+      $sub.textContent = '加载失败';
+    } else {
+      var n = filtered().length;
+      $sub.textContent = (n === state.all.length)
+        ? ('共 ' + state.all.length + ' 条记录')
+        : ('匹配 ' + n + ' / ' + state.all.length + ' 条');
+    }
+    $foot.textContent = state.all.length ? '点击任意记录查看照片详情' : '';
+  }
+
+  function highlight(text, tokens) {
+    var s = esc(text);
+    if (!tokens.length) return s;
+    tokens.forEach(function (t) {
+      if (!t || digitsOf(t) === t) return;   // 纯数字不标红，避免乱标
+      var re = new RegExp('(' + t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      s = s.replace(re, '<mark>$1</mark>');
+    });
+    return s;
+  }
+
+  function renderHot() {
+    if (state.keyword || state.range !== 'all' || state.loading || state.error) {
+      $hot.innerHTML = '';
+      return;
+    }
+    var cnt = {};
+    state.all.forEach(function (r) {
+      var c = r.customer || '未命名';
+      cnt[c] = (cnt[c] || 0) + 1;
+    });
+    var top = Object.keys(cnt)
+      .sort(function (a, b) { return cnt[b] - cnt[a]; })
+      .slice(0, 8);
+    if (!top.length) { $hot.innerHTML = ''; return; }
+    $hot.className = 'hot';
+    $hot.innerHTML = '<div class="lbl">常查客户</div><div class="row">' +
+      top.map(function (c) {
+        return '<button data-c="' + esc(c) + '">' + esc(c) +
+               '<span style="color:#b0b6c1;margin-left:4px">' + cnt[c] + '</span></button>';
+      }).join('') + '</div>';
+  }
+
+  function render() {
+    renderChrome();
+    renderHot();
+
+    if (state.loading && state.all.length === 0) {
+      $hint.style.display = 'none';
+      $list.innerHTML = '<div class="skeleton"><div class="sk"></div><div class="sk"></div><div class="sk"></div><div class="sk"></div><div class="sk"></div></div>';
+      return;
+    }
+
+    if (state.error && state.all.length === 0) {
+      $hint.style.display = 'none';
+      $list.innerHTML = '<div class="state"><div class="big">加载失败</div>' +
+        '<div>' + esc(state.error) + '</div>' +
+        '<button id="retry">重试</button></div>';
+      var b = document.getElementById('retry');
+      if (b) b.addEventListener('click', function () { load(true); });
+      return;
+    }
+
+    var rows = filtered();
+    var tokens = state.keyword.trim().split(/\s+/).filter(Boolean);
+
+    if (rows.length === 0) {
+      $hint.style.display = 'none';
+      $list.innerHTML = '<div class="state"><div class="big">没有找到记录</div>' +
+        '<div>换个客户名称，或试试「10-20」这样的日期</div></div>';
+      return;
+    }
+
+    if (tokens.length || state.range !== 'all') {
+      $hint.style.display = 'block';
+      $hint.textContent = '找到 ' + rows.length + ' 条';
+    } else {
+      $hint.style.display = 'none';
+    }
+
+    var html = [];
+    var lastDay = '';
+    rows.forEach(function (r) {
+      var dk = dayKey(r.dateTime);
+      if (dk && dk !== lastDay) {
+        var cnt = rows.filter(function (x) { return dayKey(x.dateTime) === dk; }).length;
+        html.push('<div class="date-head">' + esc(prettyDay(dk)) +
+                  '<span class="cnt">' + cnt + ' 条</span></div>');
+        lastDay = dk;
+      }
+      var title = (r.customer || '未命名') + (r.position ? ' · ' + r.position : '');
+      html.push(
+        '<a class="card" href="' + PAGE_URL + encodeURIComponent(r.id) + '">' +
+          '<div class="thumb">' +
+            (r.thumb
+              ? '<img loading="lazy" decoding="async" src="' + esc(r.thumb) + '" alt="">'
+              : '') +
+          '</div>' +
+          '<div class="body">' +
+            '<div class="title">' + highlight(title, tokens) + '</div>' +
+            '<div class="meta">' +
+              '<span>' + esc(shortTime(r.dateTime)) + '</span>' +
+              '<span class="badge">📷 ' + (r.photoCount || 0) + '</span>' +
+              (r.hasVideo ? '<span class="badge v">视频</span>' : '') +
+            '</div>' +
+            (r.remark ? '<div class="remark">' + esc(r.remark) + '</div>' : '') +
+          '</div>' +
+          '<div class="chev">' +
+            '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>' +
+          '</div>' +
+        '</a>'
+      );
+    });
+    $list.innerHTML = html.join('');
+  }
+
+  // ---------- 事件 ----------
+  var timer = null;
+  $q.addEventListener('input', function () {
+    state.keyword = $q.value;
+    $clear.classList.toggle('on', !!$q.value);
+    clearTimeout(timer);
+    timer = setTimeout(render, 90);
+  });
+  $q.addEventListener('search', function () { state.keyword = $q.value; render(); });
+
+  $clear.addEventListener('click', function () {
+    $q.value = ''; state.keyword = '';
+    $clear.classList.remove('on');
+    render(); $q.focus();
+  });
+
+  document.getElementById('chips').addEventListener('click', function (e) {
+    var btn = e.target.closest('.chip');
+    if (!btn) return;
+    state.range = btn.dataset.range;
+    Array.prototype.forEach.call(this.querySelectorAll('.chip'), function (c) {
+      c.classList.toggle('active', c === btn);
+    });
+    render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  $hot.addEventListener('click', function (e) {
+    var btn = e.target.closest('button[data-c]');
+    if (!btn) return;
+    $q.value = btn.dataset.c;
+    state.keyword = btn.dataset.c;
+    $clear.classList.add('on');
+    render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  $refresh.addEventListener('click', function () {
+    if ($refresh.classList.contains('busy')) return;
+    $refresh.classList.add('busy');
+    var done = function () {
+      $refresh.classList.remove('busy');
+    };
+    load(true);
+    setTimeout(done, 700);
+  });
+
+  load();
+})();
+</script>
+</body>
+</html>
