@@ -1,0 +1,16 @@
+{
+  "id": "r_mvge4euf00kimq",
+  "customer": "海恩",
+  "position": "时序器",
+  "dateTime": "2026-10-20 15:57",
+  "photoCount": 3,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvge4euf00kimq/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvge4euf00kimq/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvge4euf00kimq/photo_003.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1792483044697
+}
