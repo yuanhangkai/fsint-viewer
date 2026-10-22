@@ -1,0 +1,17 @@
+{
+  "id": "r_mvj4weisr51dnp",
+  "customer": "柳道",
+  "position": "48温区",
+  "dateTime": "2026-10-22 14:02",
+  "photoCount": 4,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvj4weisr51dnp/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvj4weisr51dnp/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvj4weisr51dnp/photo_003.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvj4weisr51dnp/photo_004.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1792648955549
+}
