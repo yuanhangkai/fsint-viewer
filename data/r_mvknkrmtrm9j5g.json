@@ -1,0 +1,16 @@
+{
+  "id": "r_mvknkrmtrm9j5g",
+  "customer": "金马泰",
+  "position": "时序器",
+  "dateTime": "2026-10-23 15:33",
+  "photoCount": 3,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvknkrmtrm9j5g/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvknkrmtrm9j5g/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvknkrmtrm9j5g/photo_003.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1792740788376
+}
