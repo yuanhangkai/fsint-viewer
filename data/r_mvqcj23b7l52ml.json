@@ -1,0 +1,17 @@
+{
+  "id": "r_mvqcj23b7l52ml",
+  "customer": "柳道",
+  "position": "32温区",
+  "dateTime": "2026-10-27 15:10",
+  "photoCount": 4,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvqcj23b7l52ml/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvqcj23b7l52ml/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvqcj23b7l52ml/photo_003.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvqcj23b7l52ml/photo_004.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1793085029912
+}
