@@ -1,0 +1,17 @@
+{
+  "id": "r_mvqeybj29vsyjl",
+  "customer": "拓普炜",
+  "position": "2温区",
+  "dateTime": "2026-10-27 16:18",
+  "photoCount": 4,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvqeybj29vsyjl/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvqeybj29vsyjl/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvqeybj29vsyjl/photo_003.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvqeybj29vsyjl/photo_004.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1793089101932
+}
