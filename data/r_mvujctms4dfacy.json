@@ -1,0 +1,17 @@
+{
+  "id": "r_mvujctms4dfacy",
+  "customer": "米思",
+  "position": "8温区",
+  "dateTime": "2026-10-30 13:32",
+  "photoCount": 4,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvujctms4dfacy/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvujctms4dfacy/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvujctms4dfacy/photo_003.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvujctms4dfacy/photo_004.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1793338360928
+}
