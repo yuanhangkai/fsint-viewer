@@ -1,0 +1,17 @@
+{
+  "id": "r_mvunl331eoxm9n",
+  "customer": "颂巧",
+  "position": "8温区",
+  "dateTime": "2026-10-30 15:31",
+  "photoCount": 4,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvunl331eoxm9n/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvunl331eoxm9n/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvunl331eoxm9n/photo_003.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvunl331eoxm9n/photo_004.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1793345465032
+}
