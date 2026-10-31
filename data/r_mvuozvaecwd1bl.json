@@ -1,0 +1,17 @@
+{
+  "id": "r_mvuozvaecwd1bl",
+  "customer": "迈斯特",
+  "position": "16温区",
+  "dateTime": "2026-10-30 16:10",
+  "photoCount": 4,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvuozvaecwd1bl/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvuozvaecwd1bl/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvuozvaecwd1bl/photo_003.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvuozvaecwd1bl/photo_004.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1793347834478
+}
