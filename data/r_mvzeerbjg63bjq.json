@@ -1,0 +1,17 @@
+{
+  "id": "r_mvzeerbjg63bjq",
+  "customer": "大森",
+  "position": "42温区",
+  "dateTime": "2026-11-02 23:13",
+  "photoCount": 4,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvzeerbjg63bjq/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvzeerbjg63bjq/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvzeerbjg63bjq/photo_003.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mvzeerbjg63bjq/photo_004.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1793632384724
+}
