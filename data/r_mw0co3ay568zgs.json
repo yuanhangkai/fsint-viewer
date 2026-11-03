@@ -1,0 +1,17 @@
+{
+  "id": "r_mw0co3ay568zgs",
+  "customer": "雷贝德",
+  "position": "22温区",
+  "dateTime": "2026-11-03 15:12",
+  "photoCount": 4,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mw0co3ay568zgs/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mw0co3ay568zgs/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mw0co3ay568zgs/photo_003.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mw0co3ay568zgs/photo_004.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1793689927076
+}
