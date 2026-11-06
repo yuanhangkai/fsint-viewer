@@ -1,0 +1,16 @@
+{
+  "id": "r_mw4q976iizq3tn",
+  "customer": "图邦",
+  "position": "7寸屏",
+  "dateTime": "2026-11-06 16:43",
+  "photoCount": 3,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mw4q976iizq3tn/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mw4q976iizq3tn/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mw4q976iizq3tn/photo_003.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1793954610801
+}
