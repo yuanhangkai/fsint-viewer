@@ -1,0 +1,16 @@
+{
+  "id": "r_mw49ljaldy8hlm",
+  "customer": "康非",
+  "position": "6温区",
+  "dateTime": "2026-11-06 08:57",
+  "photoCount": 3,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mw49ljaldy8hlm/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mw49ljaldy8hlm/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mw49ljaldy8hlm/photo_003.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1793926632557
+}
