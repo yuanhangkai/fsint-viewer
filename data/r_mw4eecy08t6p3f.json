@@ -1,0 +1,17 @@
+{
+  "id": "r_mw4eecy08t6p3f",
+  "customer": "好特斯",
+  "position": "21温区",
+  "dateTime": "2026-11-06 11:11",
+  "photoCount": 4,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mw4eecy08t6p3f/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mw4eecy08t6p3f/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mw4eecy08t6p3f/photo_003.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mw4eecy08t6p3f/photo_004.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1793934697212
+}
