@@ -1,0 +1,16 @@
+{
+  "id": "r_mw49rb1b9mtl3w",
+  "customer": "柳道",
+  "position": "配件",
+  "dateTime": "2026-11-06 09:01",
+  "photoCount": 3,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mw49rb1b9mtl3w/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mw49rb1b9mtl3w/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mw49rb1b9mtl3w/photo_003.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1793926901759
+}
