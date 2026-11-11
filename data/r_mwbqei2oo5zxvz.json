@@ -1,0 +1,17 @@
+{
+  "id": "r_mwbqei2oo5zxvz",
+  "customer": "震雄",
+  "position": "线缆",
+  "dateTime": "2026-11-11 14:21",
+  "photoCount": 4,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwbqei2oo5zxvz/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwbqei2oo5zxvz/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwbqei2oo5zxvz/photo_003.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwbqei2oo5zxvz/photo_004.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1794378121763
+}
