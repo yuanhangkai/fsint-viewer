@@ -1,0 +1,16 @@
+{
+  "id": "r_mwcyplz2tvb6x5",
+  "customer": "占瑞",
+  "position": "线缆",
+  "dateTime": "2026-11-12 11:02",
+  "photoCount": 3,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwcyplz2tvb6x5/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwcyplz2tvb6x5/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwcyplz2tvb6x5/photo_003.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1794452543223
+}
