@@ -1,0 +1,16 @@
+{
+  "id": "r_mwet7hdf337slu",
+  "customer": "百科",
+  "position": "线缆",
+  "dateTime": "2026-11-13 18:03",
+  "photoCount": 3,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwet7hdf337slu/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwet7hdf337slu/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwet7hdf337slu/photo_003.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1794564232003
+}
