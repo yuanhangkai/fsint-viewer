@@ -1,0 +1,17 @@
+{
+  "id": "r_mwdfcebu25kjk4",
+  "customer": "科锐嘉",
+  "position": "线缆",
+  "dateTime": "2026-11-12 18:47",
+  "photoCount": 4,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwdfcebu25kjk4/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwdfcebu25kjk4/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwdfcebu25kjk4/photo_003.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwdfcebu25kjk4/photo_004.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1794531000348
+}
