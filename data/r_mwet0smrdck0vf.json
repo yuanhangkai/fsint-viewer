@@ -1,0 +1,17 @@
+{
+  "id": "r_mwet0smrdck0vf",
+  "customer": "毅速激光",
+  "position": "配件",
+  "dateTime": "2026-11-13 17:58",
+  "photoCount": 4,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwet0smrdck0vf/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwet0smrdck0vf/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwet0smrdck0vf/photo_003.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwet0smrdck0vf/photo_004.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1794563920138
+}
