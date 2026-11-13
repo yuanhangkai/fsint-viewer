@@ -1,0 +1,17 @@
+{
+  "id": "r_mwf2kolbw30smm",
+  "customer": "康非",
+  "position": "63温区",
+  "dateTime": "2026-11-13 22:26",
+  "photoCount": 4,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwf2kolbw30smm/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwf2kolbw30smm/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwf2kolbw30smm/photo_003.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwf2kolbw30smm/photo_004.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1794579964014
+}
