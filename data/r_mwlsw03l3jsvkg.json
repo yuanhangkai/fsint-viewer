@@ -1,0 +1,17 @@
+{
+  "id": "r_mwlsw03l3jsvkg",
+  "customer": "莱俊德",
+  "position": "36温区",
+  "dateTime": "2026-11-18 15:29",
+  "photoCount": 4,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwlsw03l3jsvkg/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwlsw03l3jsvkg/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwlsw03l3jsvkg/photo_003.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwlsw03l3jsvkg/photo_004.jpg"
+  ],
+  "video": null,
+  "remark": "已发货",
+  "updatedAt": 1794986958853
+}
