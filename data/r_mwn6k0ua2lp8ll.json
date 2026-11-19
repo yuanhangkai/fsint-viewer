@@ -1,0 +1,17 @@
+{
+  "id": "r_mwn6k0ua2lp8ll",
+  "customer": "腾盛",
+  "position": "58温区",
+  "dateTime": "2026-11-19 14:39",
+  "photoCount": 4,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwn6k0ua2lp8ll/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwn6k0ua2lp8ll/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwn6k0ua2lp8ll/photo_003.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwn6k0ua2lp8ll/photo_004.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1795070381798
+}
