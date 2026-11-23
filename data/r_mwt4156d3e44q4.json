@@ -1,0 +1,17 @@
+{
+  "id": "r_mwt4156d3e44q4",
+  "customer": "欧健",
+  "position": "2温区",
+  "dateTime": "2026-11-23 18:15",
+  "photoCount": 4,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwt4156d3e44q4/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwt4156d3e44q4/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwt4156d3e44q4/photo_003.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwt4156d3e44q4/photo_004.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1795428937586
+}
