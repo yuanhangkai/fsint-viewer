@@ -1,0 +1,16 @@
+{
+  "id": "r_mwt4fpjl16pge1",
+  "customer": "昌太",
+  "position": "线缆",
+  "dateTime": "2026-11-23 18:26",
+  "photoCount": 3,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwt4fpjl16pge1/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwt4fpjl16pge1/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwt4fpjl16pge1/photo_003.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1795429616919
+}
