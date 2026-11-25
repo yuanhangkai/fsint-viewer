@@ -1,0 +1,16 @@
+{
+  "id": "r_mwvwogapsmu8eq",
+  "customer": "苏州伊之密",
+  "position": "双路模块",
+  "dateTime": "2026-11-25 17:13",
+  "photoCount": 3,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwvwogapsmu8eq/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwvwogapsmu8eq/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwvwogapsmu8eq/photo_003.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1795597987743
+}
