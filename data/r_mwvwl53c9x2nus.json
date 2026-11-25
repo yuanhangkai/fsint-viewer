@@ -1,0 +1,16 @@
+{
+  "id": "r_mwvwl53c9x2nus",
+  "customer": "震德塑料",
+  "position": "12温区",
+  "dateTime": "2026-11-25 17:10",
+  "photoCount": 3,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwvwl53c9x2nus/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwvwl53c9x2nus/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwvwl53c9x2nus/photo_003.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1795597832669
+}
