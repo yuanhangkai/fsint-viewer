@@ -1,0 +1,17 @@
+{
+  "id": "r_mwx9cxhi1nhgua",
+  "customer": "柳道",
+  "position": "120温区",
+  "dateTime": "2026-11-26 15:55",
+  "photoCount": 4,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwx9cxhi1nhgua/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwx9cxhi1nhgua/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwx9cxhi1nhgua/photo_003.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwx9cxhi1nhgua/photo_004.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1795679752589
+}
