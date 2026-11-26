@@ -1,0 +1,17 @@
+{
+  "id": "r_mwxbx99oeeyc3w",
+  "customer": "占瑞",
+  "position": "6温区",
+  "dateTime": "2026-11-26 17:07",
+  "photoCount": 4,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwxbx99oeeyc3w/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwxbx99oeeyc3w/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwxbx99oeeyc3w/photo_003.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwxbx99oeeyc3w/photo_004.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1795684059431
+}
