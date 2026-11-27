@@ -1,0 +1,17 @@
+{
+  "id": "r_mwywxyfnvpl5wk",
+  "customer": "占瑞",
+  "position": "8温区",
+  "dateTime": "2026-11-27 19:43",
+  "photoCount": 4,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwywxyfnvpl5wk/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwywxyfnvpl5wk/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwywxyfnvpl5wk/photo_003.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwywxyfnvpl5wk/photo_004.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1795779829089
+}
