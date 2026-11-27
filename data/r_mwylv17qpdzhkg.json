@@ -1,0 +1,17 @@
+{
+  "id": "r_mwylv17qpdzhkg",
+  "customer": "红石柱",
+  "position": "40温区",
+  "dateTime": "2026-11-27 14:33",
+  "photoCount": 4,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwylv17qpdzhkg/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwylv17qpdzhkg/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwylv17qpdzhkg/photo_003.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwylv17qpdzhkg/photo_004.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1795761223499
+}
