@@ -1,0 +1,17 @@
+{
+  "id": "r_mwyp6mmhvw0f6c",
+  "customer": "震雄",
+  "position": "36温区",
+  "dateTime": "2026-11-27 16:06",
+  "photoCount": 4,
+  "hasVideo": false,
+  "photos": [
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwyp6mmhvw0f6c/photo_001.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwyp6mmhvw0f6c/photo_002.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwyp6mmhvw0f6c/photo_003.jpg",
+    "https://fsint-1300-1484168074.cos.ap-guangzhou.myqcloud.com/records/r_mwyp6mmhvw0f6c/photo_004.jpg"
+  ],
+  "video": null,
+  "remark": "",
+  "updatedAt": 1795766797061
+}
